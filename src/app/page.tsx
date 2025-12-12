@@ -151,10 +151,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <a href="#" className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity font-semibold text-base sm:text-lg">
-            <span>View All Conditions</span>
-            <ArrowRight size={18} className="sm:w-5 sm:h-5" />
-          </a>
+      
         </div>
       </section>
 
