@@ -26,7 +26,7 @@ export default function HomePage() {
       name: "Dr. Raghavendra H",
       qualification: "MBBS, MD - Gen Med, DM - Rheumatology",
       bio: "13 years experience. Member of Indian Society of Nephrology (ISN) and Karnataka Medical Council. Expert in autoimmune care.",
-      image: "/im2.png"
+      image: "/drraghu.avif"
     }
   ];
 
@@ -47,17 +47,17 @@ export default function HomePage() {
   ];
 
   const services = [
-    { id: 1, title: "In-clinic Consultation", description: "Experience thorough physical examinations and personalized face-to-face discussions with our specialists to understand your condition deeply and plan effective treatment.", image: "/image.png" },
-    { id: 2, title: "Advanced Lab Testing", description: "Comprehensive autoimmune profiling and blood work analysis performed with our state-of-the-art diagnostic partners to pinpoint specific inflammatory markers.", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070&auto=format&fit=crop" },
-    { id: 3, title: "Imaging Guidance", description: "Utilizing high-resolution Ultrasound and coordinating X-ray/MRI scans for precise visualization of joint inflammation and structural changes.", image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=2070&auto=format&fit=crop" },
-    { id: 4, title: "Long-term Management", description: "Continuous monitoring protocols, regular follow-ups, and medication adjustments to ensure sustained remission and improve your quality of life.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },
-    { id: 5, title: "Teleconsultation", description: "Secure, remote video consultations for follow-ups and urgent queries, ensuring you stay connected with your doctor from the comfort of your home.", image: "https://images.unsplash.com/photo-1576091160550-2187d80a16f7?q=80&w=2070&auto=format&fit=crop" }
+    { id: 1, title: "In-clinic Consultation", description: "Experience thorough physical examinations and personalized face-to-face discussions with our specialists to understand your condition deeply and plan effective treatment.", image: "/clinic.png" },
+    { id: 2, title: "Advanced Lab Testing", description: "Comprehensive autoimmune profiling and blood work analysis performed with our state-of-the-art diagnostic partners to pinpoint specific inflammatory markers.", image: "/lab.png" },
+    { id: 3, title: "Imaging Guidance", description: "Utilizing high-resolution Ultrasound and coordinating X-ray/MRI scans for precise visualization of joint inflammation and structural changes.", image: "/imaging.png" },
+    { id: 4, title: "Long-term Management", description: "Continuous monitoring protocols, regular follow-ups, and medication adjustments to ensure sustained remission and improve your quality of life.", image: "/Long-term Management.png" },
+    { id: 5, title: "Teleconsultation", description: "Secure, remote video consultations for follow-ups and urgent queries, ensuring you stay connected with your doctor from the comfort of your home.", image: "/consutlatioon.png" }
   ];
 
   const articles = [
-    { id: "art-1", title: "How to Recognize Early Signs of Arthritis", summary: "Early detection can prevent long-term joint damage. Learn the key symptoms like stiffness and swelling to watch out for.", date: "Dec 10, 2024", tag: "Education", image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2070&auto=format&fit=crop" },
-    { id: "art-2", title: "Managing Chronic Pain: What Actually Helps?", summary: "Discover evidence-based strategies for managing chronic pain beyond just medication, including diet and exercise.", date: "Dec 05, 2024", tag: "Lifestyle", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop" },
-    { id: "art-3", title: "Autoimmune Diseases Explained in Simple Terms", summary: "Breaking down complex autoimmune conditions into easy-to-understand concepts so you can better manage your health.", date: "Nov 28, 2024", tag: "Medical Guide", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop" }
+    { id: "art-1", title: "How to Recognize Early Signs of Arthritis", summary: "Early detection can prevent long-term joint damage. Learn the key symptoms like stiffness and swelling to watch out for.", date: "Dec 10, 2025", tag: "Education", image: "/article1.png" },
+    { id: "art-2", title: "Managing Chronic Pain: What Actually Helps?", summary: "Discover evidence-based strategies for managing chronic pain beyond just medication, including diet and exercise.", date: "Nov 25, 2025", tag: "Lifestyle", image: "/article2.png" },
+    { id: "art-3", title: "Autoimmune Diseases Explained in Simple Terms", summary: "Breaking down complex autoimmune conditions into easy-to-understand concepts so you can better manage your health.", date: "Oct 18, 2025", tag: "Medical Guide", image: "/article3.png" }
   ];
 
   const [activeServiceId, setActiveServiceId] = useState(1);
@@ -67,33 +67,45 @@ export default function HomePage() {
     <div className="min-h-screen" style={{ backgroundColor: '#EEF2F9', color: '#182439' }}>
 
       {/* Hero Section */}
-      <header className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 overflow-visible">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-6 sm:space-y-10 z-10 flex flex-col items-center">
-            <h1 className="title-hero leading-tight drop-shadow-sm">
-              Expert Rheumatology Care for <span className="relative inline-block">
-                Pain-Free Living
-                <svg className="absolute w-full h-2 sm:h-3 -bottom-1 left-0 text-teal-300 opacity-60" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00026 6.99997C35.5003 3.00003 160.003 -3.5001 198.001 2.49987" stroke="currentColor" strokeWidth="3"></path></svg>
-              </span>
-            </h1>
+      <header className="w-full bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+            {/* Text Content */}
+            <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 order-2 lg:order-1">
+              <div className="space-y-6 sm:space-y-8">
+                <h1 className="title-hero leading-tight drop-shadow-sm text-left">
+                  Expert Rheumatology Care for <span className="relative inline-block">
+                    Pain-Free Living
+                    <svg className="absolute w-full h-2 sm:h-3 -bottom-1 left-0 text-teal-300 opacity-60" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00026 6.99997C35.5003 3.00003 160.003 -3.5001 198.001 2.49987" stroke="currentColor" strokeWidth="3"></path></svg>
+                  </span>
+                </h1>
 
-            <p className="desc-normal max-w-2xl mx-auto opacity-90">
-              Early diagnosis, personalised treatment, and long-term support for arthritis, autoimmune diseases, and chronic joint pain.
-            </p>
+                <p className="desc-normal opacity-90 text-left">
+                  Early diagnosis, personalised treatment, and long-term support for arthritis, autoimmune diseases, and chronic joint pain.
+                </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 justify-center w-full">
-              <button className="btn-primary flex items-center justify-center gap-2">
-                Book an Appointment
-              </button>
-              <button className="btn-secondary flex items-center justify-center gap-2">
-                Call Our Clinic
-              </button>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                  <button className="btn-primary flex items-center justify-center gap-2">
+                    Book an Appointment
+                  </button>
+                  <button className="btn-secondary flex items-center justify-center gap-2">
+                    Call Our Clinic
+                  </button>
+                </div>
+
+                <div className="pt-4 sm:pt-6 opacity-80">
+                  <p className="italic text-sm sm:text-base lg:text-lg font-medium">Move better. Live better. We're here to help you regain comfort and confidence.</p>
+                </div>
+              </div>
             </div>
 
-            <div className="pt-6 sm:pt-8 flex items-center justify-center gap-2 sm:gap-3 opacity-80">
-              <span className="hidden sm:block w-12 h-[1px] bg-slate-400"></span>
-              <p className="italic text-sm sm:text-base lg:text-lg font-medium text-center px-2">Move better. Live better. We're here to help you regain comfort and confidence.</p>
-              <span className="hidden sm:block w-12 h-[1px] bg-slate-400"></span>
+            {/* Hero Image */}
+            <div className="h-[300px] sm:h-[400px] lg:h-[550px] order-1 lg:order-2">
+              <img
+                src="/hero.png"
+                alt="Rheumatology specialist providing care"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -111,7 +123,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative h-[280px] sm:h-[350px] lg:h-full lg:min-h-[500px] w-full rounded-[20px] sm:rounded-[30px] overflow-hidden shadow-sm order-1 lg:order-2">
-              <img src="/image.png" alt="Rheumatologist consulting with patient" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/about_section_care.png" alt="Rheumatologist consulting with patient" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
         </div>
