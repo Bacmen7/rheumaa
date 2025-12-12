@@ -3,7 +3,15 @@
 @font-face {
   font-family: 'Loretta';
   src: url('/fonts/loretta-medium.otf') format('opentype');
-  font-weight: 500;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'usual';
+  src: url('/Fonts/Light.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -20,7 +28,7 @@
   --button-hover: #9ae5e1;
   --accent: #2C847F;
   --font-title: 'Loretta', Georgia, serif;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-body: 'usual', Arial, Helvetica, sans-serif;
   --border-radius: 25px;
 }
 
@@ -36,7 +44,8 @@
 body {
   background: #FFFFFF;
   color: #182439;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 .font-title {
@@ -44,7 +53,8 @@ body {
 }
 
 .font-body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 /* Background Classes */
@@ -56,7 +66,7 @@ body {
   background-color: #B1EFEC;
   color: #182439;
   border-radius: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -75,7 +85,7 @@ body {
   color: #182439;
   border: 1.5px solid #182439;
   border-radius: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -124,7 +134,7 @@ body {
 
 /* Description Styles - Mobile First */
 .desc-large {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
   font-weight: 300;
   color: #182439;
   font-size: 18px;
@@ -132,7 +142,7 @@ body {
 }
 
 .desc-normal {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
   font-weight: 300;
   color: #182439;
   font-size: 16px;
@@ -140,7 +150,7 @@ body {
 }
 
 .desc-small {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'usual', Arial, Helvetica, sans-serif;
   font-weight: 300;
   color: #182439;
   font-size: 15px;
@@ -197,6 +207,23 @@ body {
     font-size: 18px;
     line-height: 28px;
   }
+}
+
+/* White text styles for dark sections */
+.text-white-400 {
+  font-family: 'usual', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.text-white-600 {
+  font-family: 'usual', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 28px;
 }
 
 /* Animation */

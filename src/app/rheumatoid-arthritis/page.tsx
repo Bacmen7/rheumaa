@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ArrowLeft, Check, Bone, Move, HandHelping, HeartPulse, UserX, ShieldOff, Dna, HeartHandshake, Cigarette, ClipboardList, TestTube, ScanLine, Activity, PenTool, Moon, Briefcase, Heart, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Check, Bone, Move, HandHelping, HeartPulse, UserX, ShieldOff, Dna, HeartHandshake, Cigarette, ClipboardList, TestTube, ScanLine, Activity } from 'lucide-react';
 
 const ignoreReasons = [
   {
@@ -9,35 +9,35 @@ const ignoreReasons = [
     title: "Irreversible Joint Destruction",
     description: "Chronic inflammation erodes cartilage and bone, leading to permanent joint damage that cannot be reversed even with treatment.",
     icon: Bone,
-    image: "/rh1.png"
+    image: "/action/hand.png"
   },
   {
     id: 2,
     title: "Loss of Function & Mobility",
     description: "Progressive joint damage restricts movement, making simple tasks like walking, gripping, or climbing stairs increasingly difficult.",
     icon: Move,
-    image: "/rh1.png"
+    image: "/action/doorhandle.png"
   },
   {
     id: 3,
     title: "Difficulty with Daily Activities",
     description: "Stiffness and pain can interfere with work, hobbies, and self-care routines, significantly impacting quality of life.",
     icon: HandHelping,
-    image: "/rh1.png"
+    image: "/action/funtion.png"
   },
   {
     id: 4,
     title: "Cardiovascular Disease Risk",
     description: "RA-related inflammation increases the risk of heart disease, stroke, and other cardiovascular complications.",
     icon: HeartPulse,
-    image: "/rh1.png"
+    image: "/action/cardiovascular.png"
   },
   {
     id: 5,
     title: "Long-term Disability",
     description: "Without proper management, RA can lead to severe disability, affecting independence and requiring long-term care.",
     icon: UserX,
-    image: "/rh1.png"
+    image: "/action/patient.png"
   }
 ];
 
@@ -93,15 +93,15 @@ function SymptomsSection() {
     <section className="w-full py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 sm:mb-12 text-center">
           <h2 className="title-section">Common Symptoms of Rheumatoid Arthritis</h2>
         </div>
 
         {/* Main Content - Two Column Layout */}
-        <div className="flex flex-col lg:flex-row lg:gap-16">
+        <div className="flex flex-col lg:flex-row lg:gap-16 lg:justify-center">
 
-          {/* Left Side - Sticky Image & Description */}
-          <div className="lg:sticky lg:top-24 h-fit w-full lg:max-w-md space-y-6 mb-10 lg:mb-0">
+          {/* Right Side - Sticky Image & Description */}
+          <div className="lg:sticky lg:top-24 h-fit w-full lg:max-w-md space-y-6 mb-10 lg:mb-0 order-2 lg:order-2">
             {/* Image Container with Animation */}
             <div className="relative h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden" style={{ backgroundColor: '#EEF2F9' }}>
               <img
@@ -116,7 +116,7 @@ function SymptomsSection() {
             </div>
 
             {/* Active Symptom Title */}
-            <h3 className="text-xl sm:text-2xl font-title" style={{ color: '#182439' }}>
+            <h3 className="title-card" style={{ color: '#182439' }}>
               {symptomsData[activeIndex].title}
             </h3>
 
@@ -124,16 +124,10 @@ function SymptomsSection() {
             <p className="desc-normal opacity-70" style={{ color: '#182439' }}>
               {symptomsData[activeIndex].description}
             </p>
-
-            {/* CTA Button */}
-            <button className="btn-primary inline-flex items-center gap-2 mt-4">
-              Learn More
-              <ArrowLeft className="w-4 h-4 rotate-180" />
-            </button>
           </div>
 
-          {/* Right Side - Symptoms List */}
-          <div className="w-full lg:flex-1">
+          {/* Left Side - Symptoms List */}
+          <div className="w-full lg:max-w-sm order-1 lg:order-1">
             <ul className="border-t" style={{ borderColor: '#e5e5e5' }}>
               {symptomsData.map((symptom, index) => (
                 <li
@@ -144,7 +138,7 @@ function SymptomsSection() {
                 >
                   <div className="flex items-center justify-between">
                     <span
-                      className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-title font-light transition-opacity duration-300"
+                      className="text-xl sm:text-2xl lg:text-3xl font-title font-light transition-opacity duration-300"
                       style={{
                         color: '#182439',
                         opacity: index === activeIndex ? 1 : 0.25
@@ -153,7 +147,7 @@ function SymptomsSection() {
                       {symptom.title}
                     </span>
                     <sup
-                      className="text-xs sm:text-sm font-semibold ml-2 transition-opacity duration-300"
+                      className="text-xs sm:text-sm font-semibold font-body ml-2 transition-opacity duration-300"
                       style={{
                         color: '#182439',
                         opacity: index === activeIndex ? 0.6 : 0.2
@@ -195,7 +189,7 @@ function IgnoreReasonsFeature() {
           Why Rheumatoid Arthritis Should Not Be Ignored
         </h2>
         <div className="max-w-xl">
-          <p className="text-sm sm:text-base text-gray-600 mb-4">
+          <p className="desc-small opacity-70 mb-4">
             RA is progressive. Without proper treatment, ongoing inflammation can cause serious complications that may become irreversible.
           </p>
           <button className="btn-primary inline-flex items-center gap-2">
@@ -217,7 +211,7 @@ function IgnoreReasonsFeature() {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-sm sm:text-base font-medium text-center" style={{ color: '#182439' }}>
+              <h3 className="text-sm sm:text-base font-medium text-center" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif", color: '#182439' }}>
                 {reason.title}
               </h3>
             </div>
@@ -247,7 +241,7 @@ export default function RheumatoidArthritisPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EEF2F9', color: '#182439' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EEF2F9', color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
       {/* Hero Section */}
       <header className="w-full bg-white">
         <div className="max-w-7xl mx-auto">
@@ -275,7 +269,7 @@ export default function RheumatoidArthritisPage() {
             {/* Hero Image */}
             <div className="h-[300px] sm:h-[400px] lg:h-[550px] order-1 lg:order-2">
               <img
-                src="/hero.png"
+                src="/h3.png"
                 alt="Rheumatoid Arthritis Care"
                 className="w-full h-full object-cover"
               />
@@ -289,9 +283,9 @@ export default function RheumatoidArthritisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-8 lg:gap-12 lg:grid-cols-2">
             <img
-              src="/rh1.png"
+              src="/HAND.png"
               alt="Rheumatoid Arthritis illustration"
-              className="order-2 lg:order-1 max-h-96 w-full rounded-2xl object-contain p-8"
+              className="order-2 lg:order-1 w-full rounded-2xl object-contain h-[350px] sm:h-[400px] lg:h-[500px]"
             />
             <div className="order-1 lg:order-2 flex flex-col">
               <h2 className="title-section mb-4 sm:mb-6">What Is Rheumatoid Arthritis?</h2>
@@ -303,7 +297,7 @@ export default function RheumatoidArthritisPage() {
                   <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
                     <Check size={16} style={{ color: '#182439' }} />
                   </div>
-                  <p className="text-base sm:text-lg opacity-70">
+                  <p className="desc-small opacity-70">
                     Causes persistent inflammation, pain, swelling, and stiffness
                   </p>
                 </li>
@@ -311,7 +305,7 @@ export default function RheumatoidArthritisPage() {
                   <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
                     <Check size={16} style={{ color: '#182439' }} />
                   </div>
-                  <p className="text-base sm:text-lg opacity-70">
+                  <p className="desc-small opacity-70">
                     Most commonly affects hands, wrists, knees, and feet
                   </p>
                 </li>
@@ -319,7 +313,7 @@ export default function RheumatoidArthritisPage() {
                   <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
                     <Check size={16} style={{ color: '#182439' }} />
                   </div>
-                  <p className="text-base sm:text-lg opacity-70">
+                  <p className="desc-small opacity-70">
                     A systemic condition that can affect lungs, heart, eyes, and blood vessels
                   </p>
                 </li>
@@ -327,7 +321,7 @@ export default function RheumatoidArthritisPage() {
                   <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
                     <Check size={16} style={{ color: '#182439' }} />
                   </div>
-                  <p className="text-base sm:text-lg opacity-70">
+                  <p className="desc-small opacity-70">
                     Unlike age-related wear and tear, requires early treatment
                   </p>
                 </li>
@@ -344,7 +338,7 @@ export default function RheumatoidArthritisPage() {
       <section className="w-full py-12 sm:py-16 lg:py-24" style={{ backgroundColor: '#EEF2F9' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <IgnoreReasonsFeature />
-          <p className="mt-8 sm:mt-10 text-center text-sm sm:text-base font-medium opacity-80" style={{ color: '#182439' }}>
+          <p className="mt-8 sm:mt-10 text-center desc-small font-medium opacity-80" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
             The good news: early diagnosis and timely treatment can significantly slow or stop disease progression.
           </p>
         </div>
@@ -422,7 +416,7 @@ export default function RheumatoidArthritisPage() {
                   <div className="bg-white rounded-2xl p-5 sm:p-6 h-full hover:shadow-xl transition-all duration-300">
                     {/* Number + Icon Row */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl sm:text-4xl font-bold opacity-10" style={{ color: '#182439' }}>
+                      <span className="text-3xl sm:text-4xl font-bold opacity-10" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                         {item.num}
                       </span>
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#D4F3F2' }}>
@@ -430,10 +424,10 @@ export default function RheumatoidArthritisPage() {
                       </div>
                     </div>
                     {/* Content */}
-                    <h3 className="text-base sm:text-lg font-semibold mb-2" style={{ color: '#182439' }}>
+                    <h3 className="text-base sm:text-lg font-semibold mb-2" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm opacity-60 leading-relaxed" style={{ color: '#182439' }}>
+                    <p className="text-xs sm:text-sm opacity-60 leading-relaxed" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                       {item.desc}
                     </p>
                   </div>
@@ -449,7 +443,7 @@ export default function RheumatoidArthritisPage() {
           </div>
 
           {/* Bottom Note */}
-          <p className="text-center text-sm sm:text-base font-medium" style={{ color: '#182439' }}>
+          <p className="text-center text-sm sm:text-base font-medium" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
             Early diagnosis is critical to prevent long-term damage.
           </p>
         </div>
@@ -479,12 +473,12 @@ export default function RheumatoidArthritisPage() {
                 {/* Text Content - Top */}
                 <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-1 mb-2">
-                    <h3 className="text-base sm:text-lg font-title" style={{ color: '#182439', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                    <h3 className="text-base sm:text-lg" style={{ color: '#182439', textDecoration: 'underline', textUnderlineOffset: '3px', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                       {item.title}
                     </h3>
                     <span className="text-base" style={{ color: '#182439' }}>→</span>
                   </div>
-                  <p className="text-sm leading-relaxed font-body" style={{ color: '#4a4a4a' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#4a4a4a', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                     {item.desc}
                   </p>
                 </div>
@@ -503,7 +497,7 @@ export default function RheumatoidArthritisPage() {
           </div>
 
           {/* Bottom Message */}
-          <p className="mt-10 sm:mt-12 text-center desc-normal opacity-70" style={{ color: '#182439' }}>
+          <p className="mt-10 sm:mt-12 text-center desc-normal opacity-70" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
             A structured, long-term management plan helps patients regain control and confidence.
           </p>
 
@@ -511,60 +505,82 @@ export default function RheumatoidArthritisPage() {
       </section>
 
       {/* When to See Rheumatologist Section */}
-      <section className="w-full py-12 sm:py-16 lg:py-24" style={{ backgroundColor: '#D4F3F2' }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-12 sm:py-16 lg:py-24" style={{ backgroundColor: '#EEF2F9' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Left - Title */}
             <div>
-              <h2 className="title-section mb-4 sm:mb-6">When Should You See a<br />Rheumatologist?</h2>
-              <p className="desc-normal opacity-70">
-                You should consult a specialist if you experience:
-              </p>
+              <h2 className="title-section">When Should You See a Rheumatologist?</h2>
             </div>
 
-            {/* Right - List */}
-            <div className="space-y-4 sm:space-y-5">
-              {[
-                "Persistent joint pain and swelling",
-                "Morning stiffness lasting over 30 minutes",
-                "Symptoms affecting both sides of the body",
-                "Unexplained fatigue with joint symptoms"
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style={{ backgroundColor: '#182439' }}>
-                    <Check size={14} className="text-white" />
+            {/* Right - Content */}
+            <div>
+              <p className="desc-normal opacity-70 mb-6" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                You should consult a specialist if you experience:
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
+                    <Check size={16} style={{ color: '#182439' }} />
                   </div>
-                  <p className="desc-normal" style={{ color: '#182439' }}>{item}</p>
-                </div>
-              ))}
+                  <p className="desc-normal" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                    Persistent joint pain and swelling
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
+                    <Check size={16} style={{ color: '#182439' }} />
+                  </div>
+                  <p className="desc-normal" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                    Morning stiffness lasting over 30 minutes
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
+                    <Check size={16} style={{ color: '#182439' }} />
+                  </div>
+                  <p className="desc-normal" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                    Symptoms affecting both sides of the body
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 p-1 rounded-full" style={{ backgroundColor: '#D4F3F2' }}>
+                    <Check size={16} style={{ color: '#182439' }} />
+                  </div>
+                  <p className="desc-normal" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                    Unexplained fatigue with joint symptoms
+                  </p>
+                </li>
+              </ul>
+
+              <p className="text-lg sm:text-xl font-semibold" style={{ color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+                Early specialist care makes a significant difference.
+              </p>
             </div>
           </div>
 
-          {/* Bottom Note */}
-          <p className="mt-10 sm:mt-12 text-center desc-normal font-semibold" style={{ color: '#182439' }}>
-            Early specialist care makes a significant difference.
-          </p>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#182439' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-3 sm:mb-4 text-white" style={{ fontFamily: "'Loretta', Georgia, serif" }}>
+          <h2 className="title-section lg:title-hero mb-3 sm:mb-4" style={{ color: '#FFFFFF' }}>
             Take the Next Step
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-4 sm:mb-6">
+          <p className="desc-large mb-4 sm:mb-6" style={{ color: '#FFFFFF' }}>
             Early action matters.
           </p>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto">
+          <p className="desc-normal mb-8 sm:mb-10 max-w-2xl mx-auto opacity-80" style={{ color: '#FFFFFF' }}>
             If you or a loved one has symptoms suggestive of Rheumatoid Arthritis, timely evaluation can prevent long-term complications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="btn-primary">
               Book a Rheumatology Consultation
             </button>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base transition-all border-2 border-white text-white hover:bg-white hover:text-[#182439]" style={{ borderRadius: '25px' }}>
+            <button className="btn-primary hover:opacity-90" style={{ backgroundColor: '#FFFFFF', color: '#182439' }}>
               Speak to Our Care Team
             </button>
           </div>
@@ -573,7 +589,7 @@ export default function RheumatoidArthritisPage() {
 
       {/* Footer */}
       <footer className="py-8 sm:py-12 border-t border-slate-200" style={{ backgroundColor: '#EEF2F9' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 opacity-60 text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 opacity-60 text-xs sm:text-sm" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
           <p>© 2024 RheumaCare Clinic. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
             <a href="#" className="hover:text-teal-800">Privacy Policy</a>

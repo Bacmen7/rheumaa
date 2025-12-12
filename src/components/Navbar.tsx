@@ -8,8 +8,16 @@ export default function Navbar() {
       <nav className="container mx-auto px-3 sm:px-4 max-w-[1200px]">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="text-xl sm:text-2xl font-bold text-[#182439]" style={{ fontFamily: "'Loretta', Georgia, serif" }}>
-            Rheuma
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/LOGO.png" alt="Rheuma" className="h-10 sm:h-12 lg:h-14 w-auto" />
+            <div className="flex flex-col leading-tight">
+              <span className="text-lg sm:text-xl font-semibold" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", color: '#182439' }}>
+                Rheuma
+              </span>
+              <span className="text-[10px] sm:text-xs font-medium tracking-wide" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", color: '#182439' }}>
+                Clinic
+              </span>
+            </div>
           </Link>
 
           {/* Nav Links */}

@@ -11,14 +11,14 @@ import {
 export default function HomePage() {
   // Data only - no inline styles needed anymore
   const conditions = [
-    { name: "Rheumatoid Arthritis (RA)", icon: Hand, desc: "Joint inflammation care", image: "/rh1.png", slug: "rheumatoid-arthritis", hasPage: true },
-    { name: "Ankylosing Spondylitis (AS)", icon: MoveVertical, desc: "Spine & posture health", image: "/Ankylosing Spondylitis (AS).png", slug: "ankylosing-spondylitis" },
-    { name: "Osteoarthritis", icon: Bone, desc: "Bone & cartilage support", image: "/Osteoarthritis Bone.png", slug: "osteoarthritis" },
-    { name: "Lupus", icon: ShieldAlert, desc: "Autoimmune protection", image: "/Lupus.png", slug: "lupus" },
-    { name: "Gout", icon: Flame, desc: "Rapid pain relief", image: "/Gout.png", slug: "gout" },
-    { name: "Psoriatic Arthritis", icon: Sun, desc: "Skin & joint therapy", image: "/Psoriatic Arthritis.png", slug: "psoriatic-arthritis" },
-    { name: "Fibromyalgia", icon: Brain, desc: "Pain management", image: "/Fibromyalgia.png", slug: "fibromyalgia" },
-    { name: "Back & Neck Pain", icon: User, desc: "Physical therapy", image: "/backpain.png", slug: "back-neck-pain" }
+    { name: "Rheumatoid Arthritis (RA)", icon: Hand, desc: "Joint inflammation care", image: "/condition/Rheumatoid Arthritis (RA).png", slug: "rheumatoid-arthritis", hasPage: true },
+    { name: "Ankylosing Spondylitis (AS)", icon: MoveVertical, desc: "Spine & posture health", image: "/condition/Ankylosing Spondylitis (AS).png", slug: "ankylosing-spondylitis" },
+    { name: "Osteoarthritis", icon: Bone, desc: "Bone & cartilage support", image: "/condition/Osteoarthritis.png", slug: "osteoarthritis" },
+    { name: "Lupus", icon: ShieldAlert, desc: "Autoimmune protection", image: "/condition/Lupus.png", slug: "lupus" },
+    { name: "Gout", icon: Flame, desc: "Rapid pain relief", image: "/condition/Gout.png", slug: "gout" },
+    { name: "Psoriatic Arthritis", icon: Sun, desc: "Skin & joint therapy", image: "/condition/Psoriatic Arthritis.png", slug: "psoriatic-arthritis" },
+    { name: "Fibromyalgia", icon: Brain, desc: "Pain management", image: "/condition/Fibromyalgia.png", slug: "fibromyalgia" },
+    { name: "Back & Neck Pain", icon: User, desc: "Physical therapy", image: "/condition/back.png", slug: "back-neck-pain" }
   ];
 
   const doctors = [
@@ -94,7 +94,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-4 sm:pt-6 opacity-80">
-                  <p className="italic text-sm sm:text-base lg:text-lg font-medium">Move better. Live better. We're here to help you regain comfort and confidence.</p>
+                  <p className="italic desc-small">Move better. Live better. We're here to help you regain comfort and confidence.</p>
                 </div>
               </div>
             </div>
@@ -112,18 +112,18 @@ export default function HomePage() {
       </header>
 
       {/* About Section */}
-      <section className="w-full py-12 sm:py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
-            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 py-4 sm:py-8 order-2 lg:order-1">
+      <section className="w-full bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+            <div className="relative h-[350px] sm:h-[450px] lg:h-auto lg:min-h-[550px] w-full overflow-hidden order-1 lg:order-1">
+              <img src="/h2.jpg" alt="Rheumatologist consulting with patient" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 order-2 lg:order-2">
               <p className="desc-normal text-left">
                 At Rheuma, we specialise in diagnosing and treating arthritis, autoimmune disorders, and complex joint and muscle conditions.
                 <br /><br />
                 With evidence-based care, advanced diagnostics, and a compassionate approach, our goal is to help you reduce pain, restore mobility, and improve your long-term quality of life.
               </p>
-            </div>
-            <div className="relative h-[280px] sm:h-[350px] lg:h-full lg:min-h-[500px] w-full rounded-[20px] sm:rounded-[30px] overflow-hidden shadow-sm order-1 lg:order-2">
-              <img src="/about_section_care.png" alt="Rheumatologist consulting with patient" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -137,17 +137,25 @@ export default function HomePage() {
           <div id="conditions" className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 lg:mb-16">
             {conditions.map((item, index) => (
               <Link key={index} href={item.hasPage ? `/${item.slug}` : '#'} className="group relative flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg cursor-pointer bg-white overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-transparent hover:border-teal-500">
-                {item.image ? (
-                  <div className="mb-2 sm:mb-4 w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 overflow-hidden">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                {/* Content that moves up on hover */}
+                <div className="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-2">
+                  {item.image ? (
+                    <div className="mb-2 sm:mb-4 w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 flex items-center justify-center">
+                      <img src={item.image} alt={item.name} className="max-w-full max-h-full object-contain" />
+                    </div>
+                  ) : (
+                    <div className="mb-2 sm:mb-4 p-2 sm:p-3 bg-slate-50 rounded-full group-hover:bg-teal-50 transition-colors">
+                      <item.icon size={24} className="text-slate-400 group-hover:text-teal-600 transition-colors sm:w-7 sm:h-7" />
+                    </div>
+                  )}
+                  <span className="text-sm sm:text-base lg:text-lg group-hover:text-teal-900 transition-colors mb-1 font-medium text-center leading-tight font-body" style={{ color: '#182439' }}>{item.name}</span>
+                </div>
+                {/* Hover Arrow - appears below text */}
+                <div className="mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#B1EFEC' }}>
+                    <ArrowRight size={16} className="sm:w-5 sm:h-5" style={{ color: '#182439' }} />
                   </div>
-                ) : (
-                  <div className="mb-2 sm:mb-4 p-2 sm:p-3 bg-slate-50 rounded-full group-hover:bg-teal-50 transition-colors">
-                    <item.icon size={24} className="text-slate-400 group-hover:text-teal-600 transition-colors sm:w-7 sm:h-7" />
-                  </div>
-                )}
-                <span className="text-sm sm:text-base lg:text-lg group-hover:text-teal-900 transition-colors mb-1 font-medium text-center leading-tight" style={{ color: '#182439' }}>{item.name}</span>
-                <span className="text-[10px] sm:text-xs text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.desc}</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -170,7 +178,7 @@ export default function HomePage() {
                   <Check size={20} className="sm:w-6 sm:h-6" style={{ color: '#182439' }} />
                 </div>
                 <div>
-                  <h3 className="font-title text-xl sm:text-2xl font-bold mb-2 sm:mb-3" style={{ color: '#182439' }}>{item.title}</h3>
+                  <h3 className="font-title text-xl sm:text-2xl mb-2 sm:mb-3" style={{ color: '#182439' }}>{item.title}</h3>
                   <p className="desc-small">{item.desc}</p>
                 </div>
               </div>
@@ -193,10 +201,13 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="px-6 pb-8 pt-2 flex flex-col flex-grow">
-                <h4 className="font-title text-2xl font-bold mb-1 group-hover:text-teal-800 transition-colors leading-tight" style={{ color: '#182439' }}>{doctors[0].name}</h4>
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-wide mb-4">{doctors[0].qualification}</p>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">{doctors[0].bio}</p>
-                <Link href="/profile" className="mt-auto w-full py-3 rounded-full font-semibold transition-colors hover:opacity-90 text-center block text-white" style={{ backgroundColor: '#182439' }}>Know More</Link>
+                <h4 className="font-title text-2xl mb-1 group-hover:text-teal-800 transition-colors leading-tight" style={{ color: '#182439' }}>{doctors[0].name}</h4>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wide mb-4 font-body">{doctors[0].qualification}</p>
+                <p className="desc-small opacity-70 mb-6">{doctors[0].bio}</p>
+                <Link href="/profile" className="mt-auto w-full py-3 rounded-full font-semibold transition-colors hover:bg-[#182439] hover:text-white text-center flex items-center justify-center gap-2 font-body" style={{ backgroundColor: '#FFFFFF', color: '#182439', border: '2px solid #182439' }}>
+                  Know More
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
           </div>
@@ -266,8 +277,8 @@ export default function HomePage() {
                   <Star key={star} size={16} className="text-yellow-500 fill-yellow-500 sm:w-5 sm:h-5" />
                 ))}
               </div>
-              <span className="font-semibold text-base sm:text-lg" style={{ color: '#182439' }}>4.9</span>
-              <span className="text-gray-500 text-sm sm:text-base">(28 reviews on Practo)</span>
+              <span className="font-semibold text-base sm:text-lg font-body" style={{ color: '#182439' }}>4.9</span>
+              <span className="text-gray-500 text-sm sm:text-base font-body">(28 reviews on Practo)</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -278,23 +289,23 @@ export default function HomePage() {
             ].map((r, idx) => (
               <div key={idx} className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl">
                 <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm shrink-0" style={{ backgroundColor: '#D4F3F2', color: '#182439' }}>{r.initial}</div>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-medium text-sm sm:text-base shrink-0" style={{ backgroundColor: '#D4F3F2', color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>{r.initial}</div>
                   <div>
-                    <h4 className="font-semibold text-xs sm:text-sm" style={{ color: '#182439' }}>{r.name}</h4>
+                    <h4 className="font-title text-sm sm:text-base" style={{ color: '#182439' }}>{r.name}</h4>
                     <div className="flex items-center gap-0.5 sm:gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star key={star} size={10} className="text-yellow-500 fill-yellow-500 sm:w-3 sm:h-3" />
                       ))}
                     </div>
                   </div>
-                  <span className="text-[10px] sm:text-xs text-gray-400 ml-auto">{r.time}</span>
+                  <span className="text-[10px] sm:text-xs text-gray-400 ml-auto" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>{r.time}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{r.review}</p>
+                <p className="desc-small opacity-70">{r.review}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-6 sm:mt-10">
-            <a href="#" className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity font-semibold text-base sm:text-lg" style={{ color: '#182439' }}>
+            <a href="#" className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity font-semibold text-base sm:text-lg font-body" style={{ color: '#182439' }}>
               <span>View All Reviews</span>
               <ArrowRight size={18} className="sm:w-5 sm:h-5" />
             </a>
@@ -319,11 +330,11 @@ export default function HomePage() {
                       onClick={() => { setActiveServiceId(item.id); setActiveImage(item.image); }}
                       className="flex w-full items-center justify-between py-4 sm:py-6 text-left transition-all hover:opacity-80 group outline-none"
                     >
-                      <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold font-title transition-colors duration-300 pr-4" style={{ color: isActive ? '#182439' : '#94a3b8' }}>{item.title}</h4>
+                      <h4 className="text-lg sm:text-xl lg:text-2xl font-title transition-colors duration-300 pr-4" style={{ color: isActive ? '#182439' : '#94a3b8' }}>{item.title}</h4>
                       <ChevronDown className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform duration-300 ${isActive ? 'rotate-180 text-teal-600' : 'text-slate-400'}`} />
                     </button>
                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-[500px] opacity-100 mb-4 sm:mb-6' : 'max-h-0 opacity-0'}`}>
-                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">{item.description}</p>
+                      <p className="desc-small opacity-70">{item.description}</p>
                       <div className="mt-4 sm:mt-6 md:hidden rounded-xl sm:rounded-2xl overflow-hidden shadow-lg bg-slate-50">
                         <img src={item.image} alt={item.title} className="w-full h-auto object-contain" />
                       </div>
@@ -355,18 +366,18 @@ export default function HomePage() {
               <div key={item.id} className="group h-full bg-white rounded-lg sm:rounded-xl border border-slate-100 shadow-sm transition-all hover:shadow-lg overflow-hidden flex flex-col">
                 <Link href={`/blog/${item.slug}`} className="flex h-full flex-col">
                   <div className="aspect-[4/3] bg-slate-50 relative w-full overflow-hidden">
-                    <div className="absolute right-2 sm:right-4 top-2 sm:top-4 z-10 px-2 sm:px-3 py-0.5 sm:py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-bold shadow-sm uppercase tracking-wider" style={{ color: '#182439' }}>{item.tag}</div>
+                    <div className="absolute right-2 sm:right-4 top-2 sm:top-4 z-10 px-2 sm:px-3 py-0.5 sm:py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-bold shadow-sm uppercase tracking-wider font-body" style={{ color: '#182439' }}>{item.tag}</div>
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="flex flex-1 flex-col justify-between p-4 sm:p-6">
                     <div>
-                      <h3 className="mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl font-bold tracking-tight line-clamp-2 font-title" style={{ color: '#182439' }}>{item.title}</h3>
-                      <p className="text-slate-500 text-xs sm:text-sm line-clamp-2 leading-relaxed font-body">{item.summary}</p>
+                      <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl lg:text-2xl tracking-tight line-clamp-2 font-title" style={{ color: '#182439' }}>{item.title}</h3>
+                      <p className="text-sm sm:text-base opacity-60 line-clamp-2" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>{item.summary}</p>
                     </div>
                     <div className="mt-4 sm:mt-6 flex items-center justify-between">
                       <div className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1 bg-slate-50 rounded-full border border-slate-100">
                         <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400" />
-                        <span className="text-[10px] sm:text-xs font-medium text-slate-500">{item.date}</span>
+                        <span className="text-[10px] sm:text-xs font-medium text-slate-500 font-body">{item.date}</span>
                       </div>
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors">
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-teal-600" />
@@ -383,17 +394,17 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24" style={{ backgroundColor: '#182439' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-light mb-4 sm:mb-6 text-white" style={{ fontFamily: "'Loretta', Georgia, serif" }}>
+          <h2 className="title-section lg:title-hero mb-4 sm:mb-6" style={{ color: '#FFFFFF' }}>
             Start Your Journey to Better Mobility
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="desc-normal mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto opacity-80" style={{ color: '#FFFFFF' }}>
             We provide timely, expert rheumatology care to help you manage pain and regain control of your life.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <button className="px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base transition-all hover:opacity-90" style={{ backgroundColor: '#B1EFEC', color: '#182439', borderRadius: '25px' }}>
+            <button className="btn-primary">
               Book Appointment Online
             </button>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base border-2 border-white text-white transition-all hover:bg-white/10" style={{ borderRadius: '25px' }}>
+            <button className="btn-primary bg-white hover:opacity-90" style={{ backgroundColor: '#FFFFFF', color: '#182439' }}>
               Call Now
             </button>
           </div>
@@ -402,7 +413,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="py-8 sm:py-12 border-t border-slate-200" style={{ backgroundColor: '#EEF2F9' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 opacity-60 text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 opacity-60 text-xs sm:text-sm" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
           <p>© 2024 RheumaCare Clinic. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
             <a href="#" className="hover:text-teal-800">Privacy Policy</a>

@@ -5,7 +5,8 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
 export default function EarlySignsOfArthritisPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EEF2F9', color: '#182439' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EEF2F9', color: '#182439', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
+
       {/* Hero Section */}
       <header className="w-full" style={{ backgroundColor: '#EEF2F9' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20">
@@ -31,12 +32,12 @@ export default function EarlySignsOfArthritisPage() {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title leading-tight mb-6">
+          <h1 className="title-hero leading-tight mb-6">
             How to Recognise Early Signs of Arthritis
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl opacity-70 leading-relaxed max-w-2xl">
+          <p className="desc-normal max-w-2xl opacity-70">
             Arthritis doesn't always begin with severe pain or visible joint deformities. Recognising the early signs can help you get timely treatment and protect your joints.
           </p>
         </div>
@@ -306,7 +307,7 @@ export default function EarlySignsOfArthritisPage() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-slate-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-50 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-50 text-sm" style={{ fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
           <p>© 2024 RheumaCare Clinic. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:opacity-80">Privacy Policy</a>
