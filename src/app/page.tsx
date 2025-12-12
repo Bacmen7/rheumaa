@@ -55,9 +55,9 @@ export default function HomePage() {
   ];
 
   const articles = [
-    { id: "art-1", title: "How to Recognize Early Signs of Arthritis", summary: "Early detection can prevent long-term joint damage. Learn the key symptoms like stiffness and swelling to watch out for.", date: "Dec 10, 2025", tag: "Education", image: "/article1.png" },
-    { id: "art-2", title: "Managing Chronic Pain: What Actually Helps?", summary: "Discover evidence-based strategies for managing chronic pain beyond just medication, including diet and exercise.", date: "Nov 25, 2025", tag: "Lifestyle", image: "/article2.png" },
-    { id: "art-3", title: "Autoimmune Diseases Explained in Simple Terms", summary: "Breaking down complex autoimmune conditions into easy-to-understand concepts so you can better manage your health.", date: "Oct 18, 2025", tag: "Medical Guide", image: "/article3.png" }
+    { id: "art-1", title: "How to Recognize Early Signs of Arthritis", summary: "Early detection can prevent long-term joint damage. Learn the key symptoms like stiffness and swelling to watch out for.", date: "Dec 10, 2025", tag: "Education", image: "/article1.png", slug: "early-signs-of-arthritis" },
+    { id: "art-2", title: "Managing Chronic Pain: What Actually Helps?", summary: "Discover evidence-based strategies for managing chronic pain beyond just medication, including diet and exercise.", date: "Nov 25, 2025", tag: "Lifestyle", image: "/article2.png", slug: "managing-chronic-pain" },
+    { id: "art-3", title: "Autoimmune Diseases Explained in Simple Terms", summary: "Breaking down complex autoimmune conditions into easy-to-understand concepts so you can better manage your health.", date: "Oct 18, 2025", tag: "Medical Guide", image: "/article3.png", slug: "autoimmune-diseases-explained" }
   ];
 
   const [activeServiceId, setActiveServiceId] = useState(1);
@@ -353,7 +353,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {articles.map((item) => (
               <div key={item.id} className="group h-full bg-white rounded-lg sm:rounded-xl border border-slate-100 shadow-sm transition-all hover:shadow-lg overflow-hidden flex flex-col">
-                <a href="#" className="flex h-full flex-col">
+                <Link href={`/blog/${item.slug}`} className="flex h-full flex-col">
                   <div className="aspect-[4/3] bg-slate-50 relative w-full overflow-hidden">
                     <div className="absolute right-2 sm:right-4 top-2 sm:top-4 z-10 px-2 sm:px-3 py-0.5 sm:py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-bold shadow-sm uppercase tracking-wider" style={{ color: '#182439' }}>{item.tag}</div>
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -373,7 +373,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
