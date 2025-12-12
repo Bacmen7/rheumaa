@@ -9,7 +9,6 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <img src="/LOGO.png" alt="Rheuma" className="h-10 sm:h-12 lg:h-14 w-auto" />
             <div className="flex flex-col leading-tight">
               <span className="text-lg sm:text-xl font-semibold" style={{ fontFamily: "var(--font-poppins), 'Poppins', sans-serif", color: '#182439' }}>
                 Rheuma
