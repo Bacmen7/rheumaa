@@ -11,14 +11,14 @@ import {
 export default function HomePage() {
   // Data only - no inline styles needed anymore
   const conditions = [
-    { name: "Rheumatoid Arthritis (RA)", icon: Hand, desc: "Joint inflammation care", image: "/rh1.png" },
-    { name: "Ankylosing Spondylitis (AS)", icon: MoveVertical, desc: "Spine & posture health", image: "/Ankylosing Spondylitis (AS).png" },
-    { name: "Osteoarthritis", icon: Bone, desc: "Bone & cartilage support", image: "/Osteoarthritis Bone.png" },
-    { name: "Lupus", icon: ShieldAlert, desc: "Autoimmune protection", image: "/Lupus.png" },
-    { name: "Gout", icon: Flame, desc: "Rapid pain relief", image: "/Gout.png" },
-    { name: "Psoriatic Arthritis", icon: Sun, desc: "Skin & joint therapy", image: "/Psoriatic Arthritis.png" },
-    { name: "Fibromyalgia", icon: Brain, desc: "Pain management", image: "/Fibromyalgia.png" },
-    { name: "Back & Neck Pain", icon: User, desc: "Physical therapy", image: "/backpain.png" }
+    { name: "Rheumatoid Arthritis (RA)", icon: Hand, desc: "Joint inflammation care", image: "/rh1.png", slug: "rheumatoid-arthritis", hasPage: true },
+    { name: "Ankylosing Spondylitis (AS)", icon: MoveVertical, desc: "Spine & posture health", image: "/Ankylosing Spondylitis (AS).png", slug: "ankylosing-spondylitis" },
+    { name: "Osteoarthritis", icon: Bone, desc: "Bone & cartilage support", image: "/Osteoarthritis Bone.png", slug: "osteoarthritis" },
+    { name: "Lupus", icon: ShieldAlert, desc: "Autoimmune protection", image: "/Lupus.png", slug: "lupus" },
+    { name: "Gout", icon: Flame, desc: "Rapid pain relief", image: "/Gout.png", slug: "gout" },
+    { name: "Psoriatic Arthritis", icon: Sun, desc: "Skin & joint therapy", image: "/Psoriatic Arthritis.png", slug: "psoriatic-arthritis" },
+    { name: "Fibromyalgia", icon: Brain, desc: "Pain management", image: "/Fibromyalgia.png", slug: "fibromyalgia" },
+    { name: "Back & Neck Pain", icon: User, desc: "Physical therapy", image: "/backpain.png", slug: "back-neck-pain" }
   ];
 
   const doctors = [
@@ -69,9 +69,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <header className="w-full bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-start">
             {/* Text Content */}
-            <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 order-2 lg:order-1">
+            <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-16 order-2 lg:order-1">
               <div className="space-y-6 sm:space-y-8">
                 <h1 className="title-hero leading-tight drop-shadow-sm text-left">
                   Expert Rheumatology Care for <span className="relative inline-block">
@@ -100,7 +100,7 @@ export default function HomePage() {
             </div>
 
             {/* Hero Image */}
-            <div className="h-[300px] sm:h-[400px] lg:h-[550px] order-1 lg:order-2">
+            <div className="h-[300px] sm:h-[350px] lg:h-auto order-1 lg:order-2">
               <img
                 src="/hero.png"
                 alt="Rheumatology specialist providing care"
@@ -134,9 +134,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="title-section mb-3 sm:mb-4">Conditions We Treat</h2>
           <p className="desc-normal opacity-60 mb-8 sm:mb-12 lg:mb-16 max-w-2xl mx-auto">Comprehensive care plans for a wide range of rheumatological and autoimmune conditions.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 lg:mb-16">
+          <div id="conditions" className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 lg:mb-16">
             {conditions.map((item, index) => (
-              <div key={index} className="group relative flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-colors duration-300 hover:shadow-lg cursor-pointer bg-white overflow-hidden rounded-2xl sm:rounded-3xl">
+              <Link key={index} href={item.hasPage ? `/${item.slug}` : '#'} className="group relative flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg cursor-pointer bg-white overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-transparent hover:border-teal-500">
                 {item.image ? (
                   <div className="mb-2 sm:mb-4 w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 overflow-hidden">
                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
@@ -148,10 +148,9 @@ export default function HomePage() {
                 )}
                 <span className="text-sm sm:text-base lg:text-lg group-hover:text-teal-900 transition-colors mb-1 font-medium text-center leading-tight" style={{ color: '#182439' }}>{item.name}</span>
                 <span className="text-[10px] sm:text-xs text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.desc}</span>
-              </div>
+              </Link>
             ))}
           </div>
-      
         </div>
       </section>
 
