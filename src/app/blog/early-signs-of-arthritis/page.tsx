@@ -9,22 +9,22 @@ export default function EarlySignsOfArthritisPage() {
 
       {/* Hero Header */}
       <header style={{ backgroundColor: '#0d1b2a', position: 'relative', overflow: 'hidden' }}>
-        <div style={{
+        <div className="hidden lg:block" style={{
           position: 'absolute',
-          right: '-100px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '400px',
-          height: '400px',
-          background: 'radial-gradient(circle, #e8b4a0 0%, #d4a088 100%)',
+          right: '-80px',
+          bottom: '-100px',
+          width: '500px',
+          height: '500px',
           borderRadius: '50%',
-          opacity: 0.8
-        }} />
+          overflow: 'hidden'
+        }}>
+          <img src="/ar1.png" alt="Arthritis" className="w-full h-full object-cover" />
+        </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-white opacity-70 hover:opacity-100 transition-opacity mb-8">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-white opacity-70 hover:opacity-100 transition-opacity mb-8">
             <ArrowLeft size={16} />
-            Back to Articles
+            Back to Home
           </Link>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8 max-w-3xl font-title">

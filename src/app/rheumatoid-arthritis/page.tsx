@@ -45,43 +45,43 @@ const symptomsData = [
   {
     id: "01",
     title: "Joint Pain & Swelling",
-    image: "/rh1.png",
+    image: "/s1.png",
     description: "Persistent pain, swelling, and tenderness in the joints, especially in hands, wrists, and knees. The affected joints may feel warm to touch."
   },
   {
     id: "02",
     title: "Morning Stiffness",
-    image: "/rh1.png",
+    image: "/s2.png",
     description: "Stiffness that lasts more than 30-60 minutes after waking up. This is a hallmark symptom that distinguishes RA from other types of arthritis."
   },
   {
     id: "03",
     title: "Symmetrical Involvement",
-    image: "/rh1.png",
+    image: "/s3.png",
     description: "RA typically affects joints on both sides of the body equally. If one wrist is affected, the other usually is too."
   },
   {
     id: "04",
     title: "Fatigue & Weakness",
-    image: "/rh1.png",
+    image: "/s4.png",
     description: "Chronic fatigue, low energy levels, and unexplained weakness that doesn't improve with rest. This systemic symptom affects overall quality of life."
   },
   {
     id: "05",
     title: "Reduced Mobility",
-    image: "/rh1.png",
+    image: "/s5.png",
     description: "Decreased range of motion in affected joints, making it difficult to perform everyday tasks like gripping, bending, or walking."
   },
   {
     id: "06",
     title: "Warmth & Redness",
-    image: "/rh1.png",
+    image: "/s6.png",
     description: "Inflammation causes warmth and redness around affected joints. The skin may appear flushed or feel hot compared to surrounding areas."
   },
   {
     id: "07",
     title: "Flare-ups & Remission",
-    image: "/rh1.png",
+    image: "/s7.png",
     description: "Symptoms may come and go in cycles. Flare-ups bring intense symptoms, followed by periods of improvement or remission."
   }
 ];
@@ -108,7 +108,7 @@ function SymptomsSection() {
                 key={activeIndex}
                 src={symptomsData[activeIndex].image}
                 alt={symptomsData[activeIndex].title}
-                className="w-full h-full object-contain p-6 transition-all duration-500 ease-out"
+                className="w-full h-full object-cover transition-all duration-500 ease-out"
                 style={{
                   animation: 'slideIn 0.4s ease-out'
                 }}
@@ -464,10 +464,10 @@ export default function RheumatoidArthritisPage() {
           {/* Cards Grid - Reference Style */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { image: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&h=600&fit=crop", title: "Routine Tasks", desc: "Difficulty with routine tasks like writing, walking, and gripping objects.", bg: "#EEF2F9" },
-              { image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=500&h=600&fit=crop", title: "Sleep & Mood", desc: "Chronic pain affecting sleep quality and emotional well-being.", bg: "#D4F3F2" },
-              { image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=500&h=600&fit=crop", title: "Work & Productivity", desc: "Reduced work productivity and difficulty in professional settings.", bg: "#F5EFE6" },
-              { image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=500&h=600&fit=crop", title: "Emotional Health", desc: "Emotional stress, anxiety, and fear of long-term disability.", bg: "#E8F4F3" }
+              { image: "/m1.png", title: "Routine Tasks", desc: "Difficulty with routine tasks like writing, walking, and gripping objects.", bg: "#EEF2F9" },
+              { image: "/m2.png", title: "Sleep & Mood", desc: "Chronic pain affecting sleep quality and emotional well-being.", bg: "#D4F3F2" },
+              { image: "/m3.png", title: "Work & Productivity", desc: "Reduced work productivity and difficulty in professional settings.", bg: "#F5EFE6" },
+              { image: "/m4.png", title: "Emotional Health", desc: "Emotional stress, anxiety, and fear of long-term disability.", bg: "#E8F4F3" }
             ].map((item, index) => (
               <div key={index} className="group rounded-xl overflow-hidden border border-gray-300 bg-white transition-all duration-300 hover:shadow-lg">
                 {/* Text Content - Top */}

@@ -85,10 +85,10 @@ export default function ProfilePage() {
 
                     <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3 h-[140px] sm:h-[180px] lg:h-[380px]">
                         <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                            <img src="/d2.png" alt="Doctor Portrait" className="w-full h-full object-contain" />
+                            <img src="/d2.png" alt="Doctor Portrait" className="w-full h-full object-cover object-center" />
                         </div>
                         <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                            <img src="/docter.png" alt="Dr. Raghavendra H" className="w-full h-full object-contain" />
+                            <img src="/d1.png" alt="Dr. Raghavendra H" className="w-full h-full object-cover object-center" />
                         </div>
                     </div>
                 </div>
