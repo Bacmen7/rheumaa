@@ -75,7 +75,7 @@ export default function ProfilePage() {
                 {/* Image Gallery */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-3 mb-6 sm:mb-8">
                     <div className="lg:col-span-7 relative h-[220px] sm:h-[280px] lg:h-[380px] bg-gray-100 group cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl" onClick={() => setIsVideoOpen(true)}>
-                        <img src="/image.png" alt="Dr. Raghavendra with patient" className="w-full h-full object-cover" />
+                        <img src="/d3.png" alt="Dr. Raghavendra with patient" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors shrink-0">
                                 <Play size={20} className="text-[#2B3445] ml-1 shrink-0" fill="#2B3445" />
@@ -85,10 +85,10 @@ export default function ProfilePage() {
 
                     <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3 h-[140px] sm:h-[180px] lg:h-[380px]">
                         <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                            <img src="/im2.png" alt="Doctor Portrait" className="w-full h-full object-cover object-top" />
+                            <img src="/d2.png" alt="Doctor Portrait" className="w-full h-full object-contain" />
                         </div>
                         <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                            <img src="/image.png" alt="Clinic Interior" className="w-full h-full object-cover" />
+                            <img src="/docter.png" alt="Dr. Raghavendra H" className="w-full h-full object-contain" />
                         </div>
                     </div>
                 </div>
@@ -364,7 +364,7 @@ export default function ProfilePage() {
                         <div className="sticky top-24">
                             <div className="border border-gray-200 overflow-hidden bg-white p-5 sm:p-6" style={{ borderRadius: '25px' }}>
                                 <div className="w-24 h-24 sm:w-32 sm:h-32 overflow-hidden mb-4 sm:mb-6" style={{ backgroundColor: '#D4F3F2', borderRadius: '20px' }}>
-                                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400" alt="Dr. Raghavendra H" className="w-full h-full object-cover object-top" />
+                                    <img src="/docter.png" alt="Dr. Raghavendra H" className="w-full h-full object-cover object-top" />
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-medium mb-1 text-[#182439]" style={{ fontFamily: "'Loretta', Georgia, serif" }}>Dr. Raghavendra H</h3>
                                 <p className="text-gray-500 text-sm sm:text-base mb-4 sm:mb-5">Rheumatologist, Nephrologist</p>
@@ -411,12 +411,9 @@ export default function ProfilePage() {
                     <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto leading-relaxed">
                         Start your journey to healthier legs with a specialist who understands venous health inside-out.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <div className="flex justify-center">
                         <button className="px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 font-semibold text-sm sm:text-base transition-all hover:opacity-90" style={{ backgroundColor: '#B1EFEC', color: '#182439', borderRadius: '25px' }}>
-                            Book Consultation with Dr. Raghavendra
-                        </button>
-                        <button className="px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 font-semibold text-sm sm:text-base border-2 border-white text-white transition-all hover:bg-white/10" style={{ borderRadius: '25px' }}>
-                            Call Clinic
+                            Book A Consultation
                         </button>
                     </div>
                 </div>

@@ -112,14 +112,14 @@ export default function HomePage() {
       </header>
 
       {/* About Section */}
-      <section className="w-full bg-white">
+      <section className="w-full" style={{ backgroundColor: '#182439' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
             <div className="relative h-[350px] sm:h-[450px] lg:h-auto lg:min-h-[550px] w-full overflow-hidden order-1 lg:order-1">
               <img src="/h2.jpg" alt="Rheumatologist consulting with patient" className="absolute inset-0 w-full h-full object-cover" />
             </div>
             <div className="flex flex-col justify-center space-y-4 sm:space-y-6 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 order-2 lg:order-2">
-              <p className="desc-normal text-left">
+              <p className="text-base sm:text-lg lg:text-xl text-left leading-relaxed" style={{ color: '#FFFFFF', fontFamily: "'usual', Arial, Helvetica, sans-serif" }}>
                 At Rheuma, we specialise in diagnosing and treating arthritis, autoimmune disorders, and complex joint and muscle conditions.
                 <br /><br />
                 With evidence-based care, advanced diagnostics, and a compassionate approach, our goal is to help you reduce pain, restore mobility, and improve your long-term quality of life.
